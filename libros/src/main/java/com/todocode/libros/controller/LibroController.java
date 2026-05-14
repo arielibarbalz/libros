@@ -39,7 +39,4 @@ public class LibroController {
     public Libro findLibroISBN(@PathVariable Long isbn){
         return libroService.findLibroISBN(isbn);
     }
-
-
-
 }

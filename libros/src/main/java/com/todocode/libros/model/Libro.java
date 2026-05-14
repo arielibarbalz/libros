@@ -1,5 +1,6 @@
 package com.todocode.libros.model;
 
+import com.todocode.libros.dto.AutorDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,10 +14,14 @@ import java.util.List;
 public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long isbn;
+    private Long id;
+    private String isbn;
     private String titulo;
     private int anioPublicacion;
     private String descripcion;
+    @ElementCollection
+    @CollectionTable(name = "libro_autores", joinColumns = @JoinColumn(name = "libro_id"))
+    private List<AutorResumen> autores;
 
 //    public Long getIsbn() {
 //        return isbn;

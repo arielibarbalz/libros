@@ -17,6 +17,7 @@ public class Autor {
     private Long id;
     private String nombreCompleto;
     private Date fechaNacimiento;
+    private String nacionalidad;
     @ElementCollection
-    private List<String> idLibrosLeidos;
+    private List<String> idLibrosEscritos;
 }
