@@ -1,23 +1,19 @@
-package com.todocode.autores.model;
+package com.todocode.libros.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.ElementCollection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
-@Entity
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Autor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombreCompleto;
     private Date fechaNacimiento;
-    private String nacionalidad;
-    @ElementCollection
     private List<String> idLibrosEscritos;
 }
